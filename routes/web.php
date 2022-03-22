@@ -15,3 +15,6 @@ use App\http\Controllers\Indexcontroller;
 
 
 Route::get('/',[Indexcontroller::class, 'home'])->name('/');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

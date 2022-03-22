@@ -33,7 +33,10 @@
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="btn btn-primary ml-lg-3" href="#">Login / Register</a>
+              <a class="btn btn-primary ml-lg-3" href="{{route('login')}}">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-primary ml-lg-3" href="{{route('register')}}">Register</a>
             </li>
           </ul>
         </div> <!-- .navbar-collapse -->
