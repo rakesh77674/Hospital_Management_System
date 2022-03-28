@@ -71,6 +71,6 @@
   @include('component.layout.newsAd') 
   @include('component.layout.footer')
   @include('script.script')
-  
+ 
 </body>
 </html>
