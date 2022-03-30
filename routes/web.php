@@ -15,7 +15,8 @@ use App\http\Controllers\Indexcontroller;
 
 
 Route::get('/',[Indexcontroller::class, 'home'])->name('/');
-Route::get('/adminhome',[Indexcontroller::class, 'Adminindex'])->name('adminhome');
+Route::get('/dashboard',[Indexcontroller::class, 'Adminindex'])->name('dashboard');
+Route::get('admin/form',[Indexcontroller::class, 'Adminform'])->name('admin/form');
 
 
 
