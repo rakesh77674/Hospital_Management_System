@@ -10,7 +10,7 @@ class Indexcontroller extends Controller
         return view('component.index');
     }
     public function Adminform(){
-        return Redirect('script.dashboard');
+        return view('admin.component.adminform');
     }
     public function Adminindex(){
         $userrole = Auth::user()->role;
