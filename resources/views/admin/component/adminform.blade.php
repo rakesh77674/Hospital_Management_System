@@ -1,8 +1,7 @@
 @extends('adminlte::page')
-
 @section('title', 'Dashboard')
-
 @section('content_header')
+
         <form>
             <div class="form-row">
             <div class="form-group col-md-6">
@@ -36,17 +35,18 @@
             <div class="form-group"> 
             <div class="form-row">
             <div class="form-group col-md-4">
-                <label for="inputState">State</label>
-                <select id="inputState" name = "state" class="form-control">
-                <option selected>Choose...</option>
-                 <option>...</option>
-                </select>
-                </div>
+               <label for="inputState">State</label>     
+                <select id="state" name = "states_id" class="form-control">
+                <option value="">Select State</option>
+                @foreach ($data as $data1 )
+                 <option value="{{$data1->id}}">{{$data1->state}}</option>
+                 @endforeach
+                </select>  
+            </div>
             <div class="form-group col-md-4">
                 <label for="inputState">city</label>
-                <select id="inputState" name = "city" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
+                <select id="city" name = "cities_id" class="form-control">
+                    <option value="">Select City</option>
                 </select>
             </div>
             <div class="form-group col-md-2">
@@ -54,8 +54,24 @@
                 <input type="text" name = "zipcode" class="form-control" id="inputZip">
             </div>
             </div> 
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <script>
+            jQuery(document).ready(function(){
+              jQuery('#state').change(function(){
+                     let cid=jQuery(this).val();
+                     jQuery('#city').html('<option value="">Select City</option>')
+                     jQuery.ajax({
+                        url:'/getcity',//url given in request
+                         type:'post',
+                         data:'cid='+cid+'&_token={{csrf_token()}}',
+                         success:function(result){
+                             jQuery('#city').html(result);
+                        }
+                      });
+                    });
+                });    
+        </script>
 @stop
 @section('content')
 @stop
@@ -65,4 +81,5 @@
 
 @section('js')
     <script> console.log('Hi!'); </script> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" ></script>
 @stop

@@ -17,8 +17,7 @@ use App\http\Controllers\Indexcontroller;
 Route::get('/',[Indexcontroller::class, 'home'])->name('/');
 Route::get('/dashboard',[Indexcontroller::class, 'Adminindex'])->name('dashboard');
 Route::get('admin/form',[Indexcontroller::class, 'Adminform'])->name('admin/form');
-
-
+Route::post('/getcity',[Indexcontroller::class, 'getcity'])->name('/getcity');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
