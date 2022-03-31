@@ -14,7 +14,7 @@ class StateSeeder extends Seeder
      */
     public function run()
     {
-        State::create(['state' => 'Province No. 1']);
+        State::create(['state' => 'Sagarmatha']);
         State::create(['state' => 'Bagmati Province']);
         State::create(['state' => 'Madhesh Province']);
         State::create(['state' => 'Gandaki Province']);

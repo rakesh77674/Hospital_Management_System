@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DoctorForm extends Model
+class Doctor extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -15,9 +15,7 @@ class DoctorForm extends Model
         'room',
         'image',
         'zipcode',
-        'state_id',
-        'city_id',
-    
-
- ];
+        'states_id',
+        'cities_id',
+   ];
 }
