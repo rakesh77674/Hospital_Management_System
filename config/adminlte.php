@@ -250,7 +250,16 @@ return [
                 'text' => 'Add Doctors',
                 'url'  => 'admin/form',
                 'icon' => 'fas fa-fw fa-wpforms',
+                'submenu' => [
+                    [
+                    'text' => 'Doctors list',
+                    'url' => 'admin/show',
+                    'icon' => 'fas fa-fw fa-wpforms',
+                    ],
                 ],
+                ],
+                
+                
             ],
         ],
         [

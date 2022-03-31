@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\http\Controllers\Indexcontroller;
+use App\http\Controllers\CreateController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,8 @@ Route::get('/',[Indexcontroller::class, 'home'])->name('/');
 Route::get('/dashboard',[Indexcontroller::class, 'Adminindex'])->name('dashboard');
 Route::get('admin/form',[Indexcontroller::class, 'Adminform'])->name('admin/form');
 Route::post('/getcity',[Indexcontroller::class, 'getcity'])->name('/getcity');
+Route::post('/Create',[CreateController::class, 'Create'])->name('/Create');
+Route::get('admin/show',[CreateController::class, 'Show'])->name('admin/show');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
