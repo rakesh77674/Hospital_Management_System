@@ -249,17 +249,13 @@ return [
                 [
                 'text' => 'Add Doctors',
                 'url'  => 'admin/form',
-                'icon' => 'fas fa-fw fa-wpforms',
-                'submenu' => [
-                    [
+                'icon' => 'fas fa-fw fa-wpforms',      
+                ],
+                [
                     'text' => 'Doctors list',
                     'url' => 'admin/show',
                     'icon' => 'fas fa-fw fa-wpforms',
-                    ],
-                ],
-                ],
-                
-                
+             ],             
             ],
         ],
         [

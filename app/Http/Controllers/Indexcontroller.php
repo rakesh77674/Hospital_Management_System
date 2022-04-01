@@ -15,6 +15,9 @@ class Indexcontroller extends Controller
         $data = State::all();
         return view('admin.component.adminform',compact('data'));
     }
+    public function Add(){
+        return view('admin.component.adminform');
+    }
     public function getcity(Request $request){
         $cid=$request->post('cid');
         $city=City::where('states_id',$cid)->get();

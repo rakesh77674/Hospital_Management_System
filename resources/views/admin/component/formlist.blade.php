@@ -3,10 +3,14 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-<span class="btn btn-success col fileinput-button" style = "width: 138px;">
+                 <form method = "get" action = "{{url('Add')}}">
+                    <a href="/admin/form">
+                    <span class="btn btn-success col fileinput-button" style = "width: 138px;">
                         <i class="fas fa-plus"></i>
                         <span>Add files</span>
                       </span>
+                    </a>
+                    </form>
             <table class="table table-bordered">
                 <thead>
                 <tr style ="background: #f7e3b7">
@@ -22,8 +26,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>  
                     @foreach ($doctor as $doctor)
+                <tr>  
+                    
                     <td>{{$doctor->name}}</td>
                     <td>{{$doctor->speciality}}</td>
                     <td>{{$doctor->phone}}</td>
@@ -35,11 +40,9 @@
                     <td>
                     <button type="button" class="btn btn-warning" style ="background: red; color:white;">Delete</button>
                     <button type="button" class="btn btn-primary">Update</button>
-                    </td>
-                    
-
-                    @endforeach      
+                    </td>          
                 </tr>
+                @endforeach 
                 </tbody>
             </table>
 @stop

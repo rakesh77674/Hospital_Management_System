@@ -21,6 +21,7 @@ Route::get('admin/form',[Indexcontroller::class, 'Adminform'])->name('admin/form
 Route::post('/getcity',[Indexcontroller::class, 'getcity'])->name('/getcity');
 Route::post('/Create',[CreateController::class, 'Create'])->name('/Create');
 Route::get('admin/show',[CreateController::class, 'Show'])->name('admin/show');
+Route::get('Add',[Indexcontroller::class, 'Add'])->name('Add');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
