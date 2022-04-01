@@ -28,4 +28,5 @@ class CreateController extends Controller
         return view('admin.component.formlist',compact('doctor'));
 
     }
+    
 }
