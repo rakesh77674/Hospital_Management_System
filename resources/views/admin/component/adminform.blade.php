@@ -56,10 +56,10 @@
             </div> 
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-               <script
-                src="https://code.jquery.com/jquery-3.6.0.min.js"
-                integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-                crossorigin="anonymous"></script>
+        <script
+        src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous"></script>
                 <script>
                     jQuery(document).ready(function(){
                     jQuery('#state').change(function(){
@@ -76,6 +76,7 @@
                             });
                         });    
                 </script>
+            
 @stop
 @section('content')
 @stop

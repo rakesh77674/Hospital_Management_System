@@ -22,6 +22,8 @@ Route::post('/getcity',[Indexcontroller::class, 'getcity'])->name('/getcity');
 Route::post('/Create',[CreateController::class, 'Create'])->name('/Create');
 Route::get('admin/show',[CreateController::class, 'Show'])->name('admin/show');
 Route::get('Add',[Indexcontroller::class, 'Add'])->name('Add');
+Route::delete('/deleteblog/{id}',[Createcontroller::class, 'deleteblog'])->name('deleteblog');
+Route::put('/updateblog/{id}',[Createcontroller::class, 'updateblog'])->name('updateblog');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

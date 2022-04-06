@@ -38,8 +38,18 @@
                     <td>{{$doctor->states_id}}</td>
                     <td>{{$doctor->cities_id}}</td>
                     <td>
-                    <button type="button" class="btn btn-warning" style ="background: red; color:white;">Delete</button>
-                    <button type="button" class="btn btn-primary">Update</button>
+                    <div>
+                    <form method = "post" action = "{{url('/deleteblog', $doctor->id)}}">
+                    @csrf
+                    @method('delete')
+                    <button type="submit" class="btn btn-warning" style ="background: red; color:white; width: 70%">Delete</button>
+                    </form>
+                    <form method = "post" action = "{{url('/updateblog', $doctor->id)}}">
+                    @csrf
+                    @method('put')
+                    <button type="submit" class="btn btn-primary" style = "width: 68%; padding: 2px; margin: 2px;height: 35px;">Update</button>
+                    </form>
+                   </div>
                     </td>          
                 </tr>
                 @endforeach 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Doctor;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class CreateController extends Controller
 {
@@ -28,5 +29,21 @@ class CreateController extends Controller
         return view('admin.component.formlist',compact('doctor'));
 
     }
-    
+    public function deleteblog(Request $request, $id){
+       
+        try {
+            $post = Doctor::where('id',$id)->first();
+          } catch (ModelNotFoundException $e) {
+            return redirect()->route('dashboard')->with(['message'=> 'Failed']);
+          }
+        
+          $post->delete();
+        
+          return redirect()->route('dashboard')->with(['message'=> 'Successfully deleted!!']);
+
+    }  
+    public function updateblog($id){
+        $doctor = Doctor::find($id);
+        return view('admin.component.updateblog');
+    }
 }
